@@ -1,0 +1,212 @@
+/*
+    Created on : Jul 30, 2023, 10:33:19 AM
+    Author     : Woody41
+*/
+
+@cyan: cyan;
+
+@main-height: 93%;
+@bottom-height: calc( 100% - @main-height);
+
+@box-border-radius: 2px;
+
+@font-face {
+    font-family: sgc-font;
+    src: url(../assets/fonts/Bank-Gothic-Medium.otf);
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: sgc-font;
+    background-image: url(../assets/images/stargate.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    &>body {
+        margin: 6px;
+        padding: 0;
+        width: calc( 100% - 32px );
+        height: calc( 100% - 32px );
+        background-color: rgba(0,0,0,0.6);
+
+        border: 10px solid @cyan;
+        border-radius: 40px;
+    }
+}
+/*
+LEFT Panel styles. Left panel are binary boxes and flashing boxes under logo (including)
+*/
+.left-panel {
+    @border-size: 3px;
+    @margin-size: 2px;
+    @padding-size: 2px;
+
+    height: @main-height;
+    width: 20%;
+    float: left;
+    & > .binary-check-container {
+        @binary-check-margin: 115px;
+        width: calc(100% - @binary-check-margin);
+        margin-right: @binary-check-margin;
+        height: 63%;
+        & > .binary-check {
+            height: 100%;
+            & > .sgc-logo {
+                width: 64%;
+                height: 26%; /* not 27, because css is weird*/
+                float: left;
+                background-image: url(../assets/images/sgc-logo.gif);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                
+                border-radius: 100px; /* prevent background overflowing to cyan border*/
+            }
+            & > .flashing-box {
+                float: left;
+                width: calc( 12% - calc(calc(@margin-size + @padding-size + @border-size) * 2) );
+                height: calc( 27% - calc(calc(@margin-size + @padding-size + @border-size) * 2) );
+                margin: @margin-size;
+                padding: @padding-size;
+                border: @border-size solid @cyan;
+                border-radius: @box-border-radius;
+            }
+            & > .binary-container {
+                float: left;
+                width: 100%;
+                height: 74%;
+                & > .binary-box {
+                    float: left;
+                    width: 88.2%;
+
+
+                    & > .binary-text {
+                        width: calc( 100% - calc(calc(@margin-size + @padding-size + @border-size) * 2) - 19px);
+                        height: calc( 50% - calc(calc(@margin-size + @padding-size + @border-size) * 2) - 1px);
+
+                        margin: @margin-size;
+                        margin-left: 20px;
+                        padding: @padding-size;
+                        border: @border-size solid @cyan;
+                        border-radius: @box-border-radius;
+
+                        color: white;
+                        overflow: hidden;
+                        font-size: 23px;
+                    }
+                }
+                & > .flashing-box{
+                    float: left;
+                    width: calc( 12% - calc(calc(@margin-size + @padding-size + @border-size) * 2));
+                    height: calc( 100% - calc(calc(@margin-size + @padding-size + @border-size) * 2) - 4px);
+
+                    margin: @margin-size;
+                    margin-left: 1px;
+                    padding: @padding-size;
+                    border: @border-size solid @cyan;
+                    border-radius: @box-border-radius;
+                }
+            }
+        }
+    }
+    & > .chevron-status {
+        height: 37%;
+        & > .chevron-status-container {
+            width: calc( 100% - calc(calc(@margin-size + @padding-size + @border-size) * 2) - 40px);
+            height: calc( 100% - calc(calc(@padding-size + @border-size) * 2) - 25px);
+
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            padding: @padding-size;
+            border: @border-size solid @cyan;
+            border-radius: @box-border-radius;
+            & > .chevron-status-box {
+                width: 100%;
+                height: calc(100% / 7);
+
+                & > .chevron-status-red {
+                    background-color: rgba(232, 65, 24,1.0);
+                }
+                & > .chevron-status-green, .chevron-status-red {
+                    width: calc( 28% - 38px - calc( @border-size * 2 ));
+                    height: calc( 80% - 26px - calc( @border-size * 2 ));
+                    float: left;
+                    margin: 13px;
+                    margin-left: 25px;
+
+                    border: @border-size solid @cyan;
+
+
+                }
+                & > .chevron-status-text, .chevron-status-ok {
+                    float: left;
+                    width: 22%;
+                    height: 100%;
+                    text-align: center;
+                    line-height: 45px;
+                    font-size: 35px;
+                    color: white;
+                }
+                & > .chevron-status-ok {
+                    font-size: 30px;
+                    color: rgba(68, 189, 50,1.0);
+                    visibility: hidden;
+                }
+
+                &.active {
+                    & > .chevron-status-red {
+                        background-color: transparent;
+                    }
+                    & > .chevron-status-green {
+                        background-color: rgba(68, 189, 50,1.0);
+                    }
+                    & > .chevron-status-ok {
+                        visibility: initial;
+                    }
+                }
+            }
+        }
+
+    }
+}
+/*
+CENTER is stargate and some lines from chevron boxes
+*/
+.center {
+    height: @main-height;
+    width: 63%;
+    float: left;
+    background-color: rgba(255,255,0,0.2);
+}
+/*
+RIGHT Panel are chevron boxes 
+*/
+.right-panel {
+    height: @main-height;
+    width: 17%;
+    float: left;
+    background-color: rgba(255,0,255,0.2);
+}
+/*
+BOTTOM is auth code and footer of the page, user info etc.
+*/
+.bottom {
+    height: @bottom-height;
+    width: 100%;
+    float: left;
+    background-color: rgba(0,255,255,0.2);
+}
+
+/*
+Utils
+*/
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}

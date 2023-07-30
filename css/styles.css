@@ -1,0 +1,185 @@
+/*
+    Created on : Jul 30, 2023, 10:33:19 AM
+    Author     : Woody41
+*/
+@font-face {
+  font-family: sgc-font;
+  src: url(../assets/fonts/Bank-Gothic-Medium.otf);
+}
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: sgc-font;
+  background-image: url(../assets/images/stargate.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+html > body {
+  margin: 6px;
+  padding: 0;
+  width: calc(100% - 32px);
+  height: calc(100% - 32px);
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 10px solid cyan;
+  border-radius: 40px;
+}
+/*
+LEFT Panel styles. Left panel are binary boxes and flashing boxes under logo (including)
+*/
+.left-panel {
+  height: 93%;
+  width: 20%;
+  float: left;
+}
+.left-panel > .binary-check-container {
+  width: calc(100% - 115px);
+  margin-right: 115px;
+  height: 63%;
+}
+.left-panel > .binary-check-container > .binary-check {
+  height: 100%;
+}
+.left-panel > .binary-check-container > .binary-check > .sgc-logo {
+  width: 64%;
+  height: 26%;
+  /* not 27, because css is weird*/
+  float: left;
+  background-image: url(../assets/images/sgc-logo.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 100px;
+  /* prevent background overflowing to cyan border*/
+}
+.left-panel > .binary-check-container > .binary-check > .flashing-box {
+  float: left;
+  width: calc(12% - calc(calc(2px + 2px + 3px) * 2));
+  height: calc(27% - calc(calc(2px + 2px + 3px) * 2));
+  margin: 2px;
+  padding: 2px;
+  border: 3px solid cyan;
+  border-radius: 2px;
+}
+.left-panel > .binary-check-container > .binary-check > .binary-container {
+  float: left;
+  width: 100%;
+  height: 74%;
+}
+.left-panel > .binary-check-container > .binary-check > .binary-container > .binary-box {
+  float: left;
+  width: 88.2%;
+}
+.left-panel > .binary-check-container > .binary-check > .binary-container > .binary-box > .binary-text {
+  width: calc(100% - calc(calc(2px + 2px + 3px) * 2) - 19px);
+  height: calc(50% - calc(calc(2px + 2px + 3px) * 2) - 1px);
+  margin: 2px;
+  margin-left: 20px;
+  padding: 2px;
+  border: 3px solid cyan;
+  border-radius: 2px;
+  color: white;
+  overflow: hidden;
+  font-size: 23px;
+}
+.left-panel > .binary-check-container > .binary-check > .binary-container > .flashing-box {
+  float: left;
+  width: calc(12% - calc(calc(2px + 2px + 3px) * 2));
+  height: calc(100% - calc(calc(2px + 2px + 3px) * 2) - 4px);
+  margin: 2px;
+  margin-left: 1px;
+  padding: 2px;
+  border: 3px solid cyan;
+  border-radius: 2px;
+}
+.left-panel > .chevron-status {
+  height: 37%;
+}
+.left-panel > .chevron-status > .chevron-status-container {
+  width: calc(100% - calc(calc(2px + 2px + 3px) * 2) - 40px);
+  height: calc(100% - calc(calc(2px + 3px) * 2) - 25px);
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  padding: 2px;
+  border: 3px solid cyan;
+  border-radius: 2px;
+}
+.left-panel > .chevron-status > .chevron-status-container > .chevron-status-box {
+  width: 100%;
+  height: calc(100% / 7);
+}
+.left-panel > .chevron-status > .chevron-status-container > .chevron-status-box > .chevron-status-red {
+  background-color: #e84118;
+}
+.left-panel > .chevron-status > .chevron-status-container > .chevron-status-box > .chevron-status-green,
+.left-panel > .chevron-status > .chevron-status-container > .chevron-status-box .chevron-status-red {
+  width: calc(28% - 38px - calc(3px * 2));
+  height: calc(80% - 26px - calc(3px * 2));
+  float: left;
+  margin: 13px;
+  margin-left: 25px;
+  border: 3px solid cyan;
+}
+.left-panel > .chevron-status > .chevron-status-container > .chevron-status-box > .chevron-status-text,
+.left-panel > .chevron-status > .chevron-status-container > .chevron-status-box .chevron-status-ok {
+  float: left;
+  width: 22%;
+  height: 100%;
+  text-align: center;
+  line-height: 45px;
+  font-size: 35px;
+  color: white;
+}
+.left-panel > .chevron-status > .chevron-status-container > .chevron-status-box > .chevron-status-ok {
+  font-size: 30px;
+  color: #44bd32;
+  visibility: hidden;
+}
+.left-panel > .chevron-status > .chevron-status-container > .chevron-status-box.active > .chevron-status-red {
+  background-color: transparent;
+}
+.left-panel > .chevron-status > .chevron-status-container > .chevron-status-box.active > .chevron-status-green {
+  background-color: #44bd32;
+}
+.left-panel > .chevron-status > .chevron-status-container > .chevron-status-box.active > .chevron-status-ok {
+  visibility: initial;
+}
+/*
+CENTER is stargate and some lines from chevron boxes
+*/
+.center {
+  height: 93%;
+  width: 63%;
+  float: left;
+  background-color: rgba(255, 255, 0, 0.2);
+}
+/*
+RIGHT Panel are chevron boxes 
+*/
+.right-panel {
+  height: 93%;
+  width: 17%;
+  float: left;
+  background-color: rgba(255, 0, 255, 0.2);
+}
+/*
+BOTTOM is auth code and footer of the page, user info etc.
+*/
+.bottom {
+  height: calc(100% - 93%);
+  width: 100%;
+  float: left;
+  background-color: rgba(0, 255, 255, 0.2);
+}
+/*
+Utils
+*/
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/*# sourceMappingURL=styles.css.map */
