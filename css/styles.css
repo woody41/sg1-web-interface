@@ -15,13 +15,13 @@ html {
   background-image: url(../assets/images/stargate.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  overflow: hidden;
 }
 html > body {
   margin: 6px;
   padding: 0;
   width: calc(100% - 32px);
   height: calc(100% - 32px);
-  background-color: rgba(0, 0, 0, 0.6);
   border: 10px solid hsl(180, 100%, 30%);
   border-radius: 40px;
 }
@@ -154,7 +154,164 @@ CENTER is stargate and some lines from chevron boxes
   height: 93%;
   width: 63%;
   float: left;
-  background-color: rgba(255, 255, 0, 0.2);
+}
+.center > .stargate-container {
+  width: 100%;
+  height: calc(100% - 170px);
+  position: relative;
+}
+.center > .stargate-container > .stargate {
+  position: relative;
+  top: 54%;
+  left: 48%;
+}
+.center > .stargate-container > .stargate > .rings {
+  display: none;
+}
+.center > .stargate-container > .stargate > .rings > .inner-ring {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border: 5px solid hsl(180, 100%, 30%);
+  border-radius: 100%;
+  top: calc(calc(calc(700px / 2) * -1) - 5px);
+  left: calc(calc(calc(700px / 2) * -1) - 5px);
+  z-index: -1;
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-inner {
+  position: absolute;
+  width: calc(700px + 50px);
+  height: calc(700px + 50px);
+  border: 6px solid hsl(180, 100%, 30%);
+  border-radius: 100%;
+  top: calc(calc(calc(calc(700px / 2) * -1) - 6px) - 50px / 2);
+  left: calc(calc(calc(calc(700px / 2) * -1) - 6px) - 50px / 2);
+  z-index: -2;
+  background-color: black;
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer {
+  position: absolute;
+  width: calc(700px + 145px);
+  height: calc(700px + 145px);
+  border: 6px solid hsl(180, 100%, 30%);
+  border-radius: 100%;
+  top: calc(calc(calc(calc(700px / 2) * -1) - 6px) - 145px / 2);
+  left: calc(calc(calc(calc(700px / 2) * -1) - 6px) - 145px / 2);
+  z-index: -3;
+  /*                    transform: rotate(90deg);*/
+  overflow: hidden;
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line {
+  width: 102%;
+  height: 6px;
+  background-color: hsl(180, 100%, 30%);
+  position: absolute;
+  top: calc(50%);
+  left: calc(49%);
+  margin-left: -50%;
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(1) {
+  transform: rotate(0deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(2) {
+  transform: rotate(9deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(3) {
+  transform: rotate(18deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(4) {
+  transform: rotate(27deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(5) {
+  transform: rotate(36deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(6) {
+  transform: rotate(45deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(7) {
+  transform: rotate(54deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(8) {
+  transform: rotate(63deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(9) {
+  transform: rotate(72deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(10) {
+  transform: rotate(81deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(11) {
+  transform: rotate(90deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(12) {
+  transform: rotate(99deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(13) {
+  transform: rotate(108deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(14) {
+  transform: rotate(117deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(15) {
+  transform: rotate(126deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(16) {
+  transform: rotate(135deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(17) {
+  transform: rotate(144deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(18) {
+  transform: rotate(153deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(19) {
+  transform: rotate(162deg);
+}
+.center > .stargate-container > .stargate > .rings > .glyph-ring-outer > .diagonal-line:nth-child(20) {
+  transform: rotate(171deg);
+}
+.center > .stargate-container > .stargate > .rings > .outer-ring-1 {
+  position: absolute;
+  width: calc(700px + 165px);
+  height: calc(700px + 165px);
+  border: 3px solid hsl(180, 100%, 30%);
+  border-radius: 100%;
+  top: calc(calc(calc(calc(700px / 2) * -1) - 3px) - 165px / 2);
+  left: calc(calc(calc(calc(700px / 2) * -1) - 3px) - 165px / 2);
+  z-index: -3;
+}
+.center > .stargate-container > .stargate > .rings > .outer-ring-2 {
+  position: absolute;
+  width: calc(700px + 200px);
+  height: calc(700px + 200px);
+  border: 3px solid hsl(180, 100%, 30%);
+  border-radius: 100%;
+  top: calc(calc(calc(calc(700px / 2) * -1) - 3px) - 200px / 2);
+  left: calc(calc(calc(calc(700px / 2) * -1) - 3px) - 200px / 2);
+  z-index: -3;
+}
+.center > .stargate-container > .stargate > .rings > .outer-ring-3 {
+  position: absolute;
+  width: calc(700px + 240px);
+  height: calc(700px + 240px);
+  border: 15px solid hsl(180, 100%, 30%);
+  border-radius: 100%;
+  top: calc(calc(calc(calc(700px / 2) * -1) - 15px) - 240px / 2);
+  left: calc(calc(calc(calc(700px / 2) * -1) - 15px) - 240px / 2);
+  z-index: -3;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  top: 0%;
+  left: 0%;
+}
+.center > .status-container {
+  width: 100%;
+  height: 170px;
+  background-color: rgba(255, 0, 0, 0.2);
 }
 /*
 RIGHT Panel are chevron boxes 

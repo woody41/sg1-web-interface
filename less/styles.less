@@ -25,12 +25,12 @@ html {
     background-image: url(../assets/images/stargate.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    overflow: hidden;
     &>body {
         margin: 6px;
         padding: 0;
         width: calc( 100% - 32px );
         height: calc( 100% - 32px );
-        background-color: rgba(0,0,0,0.6);
 
         border: 10px solid @cyan;
         border-radius: 40px;
@@ -180,7 +180,209 @@ CENTER is stargate and some lines from chevron boxes
     height: @main-height;
     width: 63%;
     float: left;
-    background-color: rgba(255,255,0,0.2);
+
+    @status-container-height: 170px;
+    & > .stargate-container {
+        width: 100%;
+        height: calc( 100% - @status-container-height );
+        @stargate-diameter: 700px;
+        @stargate-radius: calc( @stargate-diameter / 2 );
+        @stargate-radius-negative: calc( @stargate-radius * -1 );
+
+        @stargate-position-top: 54%;
+        @stargate-position-left: 48%;
+        position: relative;
+        & > .stargate {
+            position: relative;
+            top: @stargate-position-top;
+            left: @stargate-position-left;
+            & > .rings {
+                display: none;
+                & > .inner-ring {
+                    position: absolute;
+                    width: @stargate-diameter;
+                    height: @stargate-diameter;
+                    @ring-border-size: 5px;
+                    border: @ring-border-size solid @cyan;
+                    border-radius: 100%;
+                    top: calc( @stargate-radius-negative - @ring-border-size );
+                    left: calc( @stargate-radius-negative - @ring-border-size );
+                    z-index: -1;
+                }
+                & > .glyph-ring-inner {
+                    @glyph-ring-size: 50px;
+                    position: absolute;
+                    @ring-border-size: 6px;
+                    width: calc( @stargate-diameter + @glyph-ring-size );
+                    height: calc( @stargate-diameter + @glyph-ring-size );
+                    border: @ring-border-size solid @cyan;
+                    border-radius: 100%;
+                    top: calc( calc( @stargate-radius-negative - @ring-border-size ) - @glyph-ring-size / 2 );
+                    left: calc( calc( @stargate-radius-negative - @ring-border-size ) - @glyph-ring-size / 2 );
+                    z-index: -2;
+                    background-color: black;
+                }
+                & > .glyph-ring-outer {
+                    @glyph-ring-size: 145px;
+                    position: absolute;
+                    @ring-border-size: 6px;
+                    width: calc( @stargate-diameter + @glyph-ring-size );
+                    height: calc( @stargate-diameter + @glyph-ring-size );
+                    border: @ring-border-size solid @cyan;
+                    border-radius: 100%;
+                    top: calc( calc( @stargate-radius-negative - @ring-border-size ) - @glyph-ring-size / 2 );
+                    left: calc( calc( @stargate-radius-negative - @ring-border-size ) - @glyph-ring-size / 2 );
+                    z-index: -3;
+
+                    /*                    transform: rotate(90deg);*/
+                    overflow: hidden;
+                    & > .diagonal-line {
+                        width: 102%;
+                        height: 6px;
+                        background-color: @cyan;
+                        position: absolute;
+                        top: calc( 50% );
+                        left: calc( 49% );
+                        margin-left: -50%;
+                        &:nth-child(1) {
+                            transform: rotate(0deg);
+                        }
+
+                        &:nth-child(2) {
+                            transform: rotate(9deg);
+                        }
+
+                        &:nth-child(3) {
+                            transform: rotate(18deg);
+                        }
+
+                        &:nth-child(4) {
+                            transform: rotate(27deg);
+                        }
+
+                        &:nth-child(5) {
+                            transform: rotate(36deg);
+                        }
+
+                        &:nth-child(6) {
+                            transform: rotate(45deg);
+                        }
+
+                        &:nth-child(7) {
+                            transform: rotate(54deg);
+                        }
+
+                        &:nth-child(8) {
+                            transform: rotate(63deg);
+                        }
+
+                        &:nth-child(9) {
+                            transform: rotate(72deg);
+                        }
+
+                        &:nth-child(10) {
+                            transform: rotate(81deg);
+                        }
+
+                        &:nth-child(11) {
+                            transform: rotate(90deg);
+                        }
+
+                        &:nth-child(12) {
+                            transform: rotate(99deg);
+                        }
+
+                        &:nth-child(13) {
+                            transform: rotate(108deg);
+                        }
+
+                        &:nth-child(14) {
+                            transform: rotate(117deg);
+                        }
+
+                        &:nth-child(15) {
+                            transform: rotate(126deg);
+                        }
+
+                        &:nth-child(16) {
+                            transform: rotate(135deg);
+                        }
+
+                        &:nth-child(17) {
+                            transform: rotate(144deg);
+                        }
+
+                        &:nth-child(18) {
+                            transform: rotate(153deg);
+                        }
+
+                        &:nth-child(19) {
+                            transform: rotate(162deg);
+                        }
+
+                        &:nth-child(20) {
+                            transform: rotate(171deg);
+                        }
+
+                    }
+                }
+                & > .outer-ring-1 {
+                    @ring-size: 165px;
+                    position: absolute;
+                    @ring-border-size: 3px;
+                    width: calc( @stargate-diameter + @ring-size );
+                    height: calc( @stargate-diameter + @ring-size );
+                    border: @ring-border-size solid @cyan;
+                    border-radius: 100%;
+                    top: calc( calc( @stargate-radius-negative - @ring-border-size ) - @ring-size / 2 );
+                    left: calc( calc( @stargate-radius-negative - @ring-border-size ) - @ring-size / 2 );
+                    z-index: -3;
+                }
+                & > .outer-ring-2 {
+                    @ring-size: 200px;
+                    @ring-border-size: 3px;
+                    position: absolute;
+                    width: calc( @stargate-diameter + @ring-size );
+                    height: calc( @stargate-diameter + @ring-size );
+                    border: @ring-border-size solid @cyan;
+                    border-radius: 100%;
+                    top: calc( calc( @stargate-radius-negative - @ring-border-size ) - @ring-size / 2 );
+                    left: calc( calc( @stargate-radius-negative - @ring-border-size ) - @ring-size / 2 );
+                    z-index: -3;
+                }
+                & > .outer-ring-3 {
+                    @ring-size: 240px;
+                    @ring-border-size: 15px;
+                    position: absolute;
+                    width: calc( @stargate-diameter + @ring-size );
+                    height: calc( @stargate-diameter + @ring-size );
+                    border: @ring-border-size solid @cyan;
+                    border-radius: 100%;
+                    top: calc( calc( @stargate-radius-negative - @ring-border-size ) - @ring-size / 2 );
+                    left: calc( calc( @stargate-radius-negative - @ring-border-size ) - @ring-size / 2 );
+                    z-index: -3;
+                }
+            }
+            & > .chevron-holder {
+                & > .chevron {
+                    position: absolute;
+                    
+                    width: 100px;
+                    height: 100px;
+                    
+                    background-color: red;
+                    
+                    top: 0%;
+                    left: 0%;
+                }
+            }
+        }
+    }
+    & > .status-container {
+        width: 100%;
+        height: @status-container-height;
+        background-color: rgba(255,0,0,0.2);
+    }
 }
 /*
 RIGHT Panel are chevron boxes 
@@ -360,7 +562,7 @@ RIGHT Panel are chevron boxes
             position: absolute;
             right: -85;
             bottom: 0;
-            
+
             width: 30px;
             height: 200px;
             border: @border-size solid @cyan;
