@@ -163,7 +163,6 @@ RIGHT Panel are chevron boxes
   height: 93%;
   width: 17%;
   float: left;
-  background-color: rgba(255, 0, 255, 0.2);
 }
 .right-panel > .character-border {
   display: inline-block;
@@ -208,6 +207,135 @@ RIGHT Panel are chevron boxes
   letter-spacing: 2px;
   font-size: 32px;
   color: white;
+  margin-bottom: 0;
+}
+.right-panel > .line-container {
+  width: 100%;
+}
+.right-panel > .line-container > .line {
+  width: 75%;
+  height: 3px;
+  background-color: hsl(180, 100%, 30%);
+  margin-top: 15px;
+}
+.right-panel > .line-container > .line:first-of-type {
+  margin-top: 10px;
+}
+.right-panel > .glyph-container {
+  /* TODO: Adjust variables to be variable and add class which will calculate how many glyphs we use 7 or 8 (or 9) */
+  position: relative;
+  width: 75%;
+}
+.right-panel > .glyph-container > .glyph {
+  width: calc(100% - 70px);
+  height: 125px;
+  margin-top: 20px;
+  margin-left: 70px;
+  border: 3px solid hsl(180, 100%, 30%);
+  border-radius: 2px;
+  position: relative;
+}
+.right-panel > .glyph-container > .glyph > .line {
+  position: absolute;
+  height: 3px;
+  background-color: hsl(180, 100%, 30%);
+}
+.right-panel > .glyph-container > .glyph > .line > .line-holder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.right-panel > .glyph-container > .glyph > .line > .line-holder > .line {
+  position: absolute;
+  background-color: hsl(180, 100%, 30%);
+}
+.right-panel > .glyph-container > .glyph:nth-child(1) > .line {
+  right: 100%;
+  top: 50%;
+  width: 100px;
+}
+.right-panel > .glyph-container > .glyph:nth-child(2) > .line {
+  right: 100%;
+  top: 50%;
+  width: 100px;
+}
+.right-panel > .glyph-container > .glyph:nth-child(3) > .line {
+  right: 100%;
+  top: 50%;
+  width: 100px;
+}
+.right-panel > .glyph-container > .glyph:nth-child(4) > .line {
+  left: 100%;
+  top: 50%;
+  width: 80px;
+}
+.right-panel > .glyph-container > .glyph:nth-child(4) > .line > .line-holder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.right-panel > .glyph-container > .glyph:nth-child(4) > .line > .line-holder > .line {
+  left: 100%;
+  width: 3px;
+  height: 522.5px;
+  margin-top: calc(-522.5px + 3px);
+}
+.right-panel > .glyph-container > .glyph:nth-child(5) > .line {
+  left: 100%;
+  top: 50%;
+  width: 60px;
+}
+.right-panel > .glyph-container > .glyph:nth-child(5) > .line > .line-holder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.right-panel > .glyph-container > .glyph:nth-child(5) > .line > .line-holder > .line {
+  left: 100%;
+  width: 3px;
+  height: 672.5px;
+  margin-top: calc(-672.5px + 3px);
+}
+.right-panel > .glyph-container > .glyph:nth-child(6) > .line {
+  left: 100%;
+  top: 50%;
+  width: 40px;
+}
+.right-panel > .glyph-container > .glyph:nth-child(6) > .line > .line-holder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.right-panel > .glyph-container > .glyph:nth-child(6) > .line > .line-holder > .line {
+  left: 100%;
+  width: 3px;
+  height: 822.5px;
+  margin-top: calc(-822.5px + 3px);
+}
+.right-panel > .glyph-container > .glyph:nth-child(7) > .line {
+  left: 100%;
+  top: 50%;
+  width: 20px;
+}
+.right-panel > .glyph-container > .glyph:nth-child(7) > .line > .line-holder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.right-panel > .glyph-container > .glyph:nth-child(7) > .line > .line-holder > .line {
+  left: 100%;
+  width: 3px;
+  height: 972.5px;
+  margin-top: calc(-972.5px + 3px);
+}
+.right-panel > .glyph-container > .flashing-box {
+  position: absolute;
+  right: -85;
+  bottom: 0;
+  width: 30px;
+  height: 200px;
+  border: 3px solid hsl(180, 100%, 30%);
+  border-radius: 2px;
 }
 /*
 BOTTOM is auth code and footer of the page, user info etc.
@@ -301,6 +429,12 @@ Utils
   content: "";
   clear: both;
   display: table;
+}
+.generated-line {
+  position: absolute;
+  border: 2px solid hsl(180, 100%, 30%);
+  border-radius: 10px;
+  transform-origin: 0 0;
 }
 .flashing-box {
   overflow: hidden;

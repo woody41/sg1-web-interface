@@ -9,6 +9,7 @@
 @bottom-height: calc( 100% - @main-height);
 
 @box-border-radius: 2px;
+@border-size: 3px;
 
 @font-face {
     font-family: sgc-font;
@@ -39,7 +40,6 @@ html {
 LEFT Panel styles. Left panel are binary boxes and flashing boxes under logo (including)
 */
 .left-panel {
-    @border-size: 3px;
     @margin-size: 2px;
     @padding-size: 2px;
 
@@ -189,7 +189,6 @@ RIGHT Panel are chevron boxes
     height: @main-height;
     width: 17%;
     float: left;
-    background-color: rgba(255,0,255,0.2);
     & > .character-border {
         display: inline-block;
         width: calc( 100% - 15px);
@@ -228,9 +227,144 @@ RIGHT Panel are chevron boxes
             text-align: right;
             padding-right: 30px;
             padding-top: 25px;
-            letter-spacing: 2px;   
+            letter-spacing: 2px;
             font-size: 32px;
             color: white;
+            margin-bottom: 0;
+        }
+    }
+    & > .line-container {
+        width: 100%;
+        & > .line {
+            width: 75%;
+            height: @border-size;
+            background-color: @cyan;
+            margin-top: 15px;
+            &:first-of-type {
+                margin-top: 10px;
+            }
+        }
+    }
+    & > .glyph-container {
+        /* TODO: Adjust variables to be variable and add class which will calculate how many glyphs we use 7 or 8 (or 9) */
+        position: relative;
+        width: 75%;
+        & > .glyph {
+            width: calc( 100% - 70px);
+            height: 125px;
+            margin-top: 20px;
+            margin-left: 70px;
+            border: @border-size solid @cyan;
+            border-radius: @box-border-radius;
+            position: relative;
+            & > .line {
+                position: absolute;
+                height: @border-size;
+                background-color: @cyan;
+
+                & > .line-holder {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    & > .line {
+                        position: absolute;
+                        background-color: @cyan;
+                    }
+                }
+            }
+            &:nth-child(1) > .line {
+                right: 100%;
+                top: 50%;
+                width: 100px;
+            }
+            &:nth-child(2) > .line {
+                right: 100%;
+                top: 50%;
+                width: 100px;
+            }
+            &:nth-child(3) > .line {
+                right: 100%;
+                top: 50%;
+                width: 100px;
+            }
+            &:nth-child(4) > .line {
+                left: 100%;
+                top: 50%;
+                width: 80px;
+                & > .line-holder {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    & > .line {
+                        @line-height: 522.5px;
+                        left: 100%;
+                        width: @border-size;
+                        height: @line-height;
+                        margin-top: calc( -@line-height + @border-size);
+                    }
+                }
+            }
+            &:nth-child(5) > .line {
+                left: 100%;
+                top: 50%;
+                width: 60px;
+                & > .line-holder {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    & > .line {
+                        @line-height: 672.5px;
+                        left: 100%;
+                        width: @border-size;
+                        height: @line-height;
+                        margin-top: calc( -@line-height + @border-size);
+                    }
+                }
+            }
+            &:nth-child(6) > .line {
+                left: 100%;
+                top: 50%;
+                width: 40px;
+                & > .line-holder {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    & > .line {
+                        @line-height: 822.5px;
+                        left: 100%;
+                        width: @border-size;
+                        height: @line-height;
+                        margin-top: calc( -@line-height + @border-size);
+                    }
+                }
+            }
+            &:nth-child(7) > .line {
+                left: 100%;
+                top: 50%;
+                width: 20px;
+                & > .line-holder {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    & > .line {
+                        @line-height: 972.5px;
+                        left: 100%;
+                        width: @border-size;
+                        height: @line-height;
+                        margin-top: calc( -@line-height + @border-size);
+                    }
+                }
+            }
+        }
+        & > .flashing-box {
+            position: absolute;
+            right: -85;
+            bottom: 0;
+            
+            width: 30px;
+            height: 200px;
+            border: @border-size solid @cyan;
+            border-radius: @box-border-radius;
         }
     }
 }
@@ -327,6 +461,13 @@ Utils
     content: "";
     clear: both;
     display: table;
+}
+
+.generated-line {
+    position: absolute;
+    border: 2px solid @cyan;
+    border-radius: 10px;
+    transform-origin: 0 0;
 }
 
 .flashing-box {
