@@ -262,9 +262,9 @@ Utils
   overflow: hidden;
 }
 .flashing-box > div {
-  -webkit-transition: background-color 200ms linear;
-  -ms-transition: background-color 200ms linear;
-  transition: background-color 200ms linear;
+  -webkit-transition: background-color 100ms linear;
+  -ms-transition: background-color 100ms linear;
+  transition: background-color 100ms linear;
 }
 .flashing-box > div.type1 {
   width: 10px;

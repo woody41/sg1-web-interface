@@ -63,9 +63,9 @@ function applyClassSwap() {
             }
         });
     });
+    console.log("class swap");
+    setTimeout(applyClassSwap, Math.floor(Math.random() * 400 + 100));
 }
 
-// Call the applyClassSwap function every 2 seconds
-setInterval(applyClassSwap, 2000);
-setInterval(applyClassSwap, 1000);
-setInterval(applyClassSwap, 300);
+
+setTimeout(applyClassSwap, 10);
