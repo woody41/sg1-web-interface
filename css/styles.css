@@ -12,7 +12,8 @@ html {
   width: 100%;
   height: 100%;
   font-family: sgc-font;
-  background-image: url(../assets/images/stargate.png);
+  background-image: url(../assets/images/stargates.png);
+  background-color: black;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   overflow: hidden;
@@ -165,9 +166,6 @@ CENTER is stargate and some lines from chevron boxes
   top: 54%;
   left: 48%;
 }
-.center > .stargate-container > .stargate > .rings {
-  display: none;
-}
 .center > .stargate-container > .stargate > .rings > .inner-ring {
   position: absolute;
   width: 700px;
@@ -304,9 +302,246 @@ CENTER is stargate and some lines from chevron boxes
   position: absolute;
   width: 100px;
   height: 100px;
-  background-color: red;
-  top: 0%;
+  transition: all 0.2s ease;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron:hover > .chevron-outer {
+  margin-top: 25px;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron:hover > .chevron-inner {
+  top: -15px;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron:hover .light {
+  opacity: 1 !Important;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-inner {
+  position: relative;
+  transition: all 0.1s ease;
+  top: 0;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-inner > .top-line {
+  position: absolute;
+  left: -25px;
+  width: 49px;
+  height: 20px;
+  border-top: 4px solid #aa1e14;
+  border-left: 4px solid #aa1e14;
+  border-right: 4px solid #aa1e14;
+  background-color: black;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-inner > .bottom-line {
+  position: absolute;
+  left: -8px;
+  width: 19px;
+  height: 60px;
+  border-bottom: 4px solid #aa1e14;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-inner > .middle-background {
+  position: absolute;
+  left: -8px;
+  top: 20;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-inner > .side-right {
+  position: absolute;
+  left: 3px;
+  top: 17px;
+  width: 16px;
+  height: 45px;
+  border-right: 4px solid #aa1e14;
+  background-color: black;
+  transform: rotate(24deg);
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-inner > .side-left {
+  position: absolute;
+  left: -17px;
+  top: 17px;
+  width: 16px;
+  height: 45px;
+  border-left: 4px solid #aa1e14;
+  border-radius: 5px;
+  background-color: black;
+  transform: rotate(-24deg);
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-inner > .light-middle {
+  position: absolute;
+  left: -32px;
+  top: -25px;
+  width: 70px;
+  height: 100px;
+  background: radial-gradient(ellipse at center, #eb2f06 10%, rgba(255, 255, 255, 0) 70%, transparent 100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-outer {
+  position: relative;
+  margin-top: 5px;
+  transition: all 0.2s ease;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-outer > .bottom-line {
+  position: absolute;
+  left: calc(-28px + 4px);
+  top: 80px;
+  width: 55px;
+  height: 10px;
+  border-bottom: 4px solid #aa1e14;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-outer > .bottom-line-top {
+  position: absolute;
+  left: calc(-15px + 4px);
+  top: 72px;
+  width: 30px;
+  height: 15px;
+  background-color: black;
+  border-top: 4px solid #aa1e14;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-outer > .wing-left {
+  position: absolute;
+  left: -47px;
+  top: -14px;
+  width: 16px;
+  height: 105px;
+  border-left: 4px solid #aa1e14;
+  border-right: 4px solid #aa1e14;
+  border-top: 4px solid #aa1e14;
+  border-radius: 5px 5px 0 0;
+  background-color: black;
+  transform: rotate(-24deg);
+  overflow: hidden;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-outer > .wing-left > .line {
+  position: absolute;
+  left: -30px;
+  width: 100px;
+  height: 3px;
+  background-color: #aa1e14;
+  transform: rotate(24deg);
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-outer > .wing-left > .line:nth-child(1) {
+  top: 30px;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-outer > .wing-left > .line:nth-child(2) {
+  top: 45px;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-outer > .wing-left > .line:nth-child(3) {
+  top: 60px;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-outer > .wing-left > .line:nth-child(4) {
+  top: 75px;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-outer > .wing-right {
+  position: absolute;
+  left: 30px;
+  top: -14px;
+  width: 16px;
+  height: 105px;
+  border-left: 4px solid #aa1e14;
+  border-right: 4px solid #aa1e14;
+  border-top: 4px solid #aa1e14;
+  border-radius: 5px 5px 0 0;
+  background-color: black;
+  transform: rotate(24deg);
+  overflow: hidden;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-outer > .wing-right > .line {
+  position: absolute;
+  left: -30px;
+  width: 100px;
+  height: 3px;
+  background-color: #aa1e14;
+  transform: rotate(-24deg);
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-outer > .wing-right > .line:nth-child(1) {
+  top: 20px;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-outer > .wing-right > .line:nth-child(2) {
+  top: 35px;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-outer > .wing-right > .line:nth-child(3) {
+  top: 50px;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-outer > .wing-right > .line:nth-child(4) {
+  top: 65px;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-outer > .light-left {
+  position: absolute;
+  left: -57px;
+  top: -15px;
+  width: 40px;
+  height: 100px;
+  background: radial-gradient(ellipse at center, #eb2f06 10%, rgba(255, 255, 255, 0) 70%, transparent 100%);
+  transform: rotate(-24deg);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-outer > .light-right {
+  position: absolute;
+  left: 25px;
+  top: -15px;
+  width: 40px;
+  height: 100px;
+  background: radial-gradient(ellipse at center, #eb2f06 10%, rgba(255, 255, 255, 0) 70%, transparent 100%);
+  transform: rotate(24deg);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron:nth-child(1) {
+  top: -490px;
   left: 0%;
+  transform: rotate(0deg);
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron:nth-child(2) {
+  top: -360px;
+  left: 272;
+  transform: rotate(40deg);
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron:nth-child(3) {
+  top: -90px;
+  left: 390;
+  transform: rotate(80deg);
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron:nth-child(4) {
+  top: 220px;
+  left: 300;
+  transform: rotate(120deg);
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron:nth-child(5) {
+  top: 380px;
+  left: 50;
+  transform: rotate(160deg);
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron:nth-child(6) {
+  top: 350px;
+  left: -240;
+  transform: rotate(200deg);
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron:nth-child(7) {
+  top: 130px;
+  left: -453;
+  transform: rotate(240deg);
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron:nth-child(8) {
+  top: -180px;
+  left: -473;
+  transform: rotate(280deg);
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron:nth-child(9) {
+  top: -423px;
+  left: -290;
+  transform: rotate(320deg);
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron#chevron-8 div {
+  border-color: gray;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron#chevron-8 .line {
+  background-color: grey;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron#chevron-9 div {
+  border-color: gray;
+}
+.center > .stargate-container > .stargate > .chevron-holder > .chevron#chevron-9 .line {
+  background-color: grey;
 }
 .center > .status-container {
   width: 100%;

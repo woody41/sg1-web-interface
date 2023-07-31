@@ -22,7 +22,8 @@ html {
     width: 100%;
     height: 100%;
     font-family: sgc-font;
-    background-image: url(../assets/images/stargate.png);
+    background-image: url(../assets/images/stargates.png);
+    background-color: black;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     overflow: hidden;
@@ -197,7 +198,6 @@ CENTER is stargate and some lines from chevron boxes
             top: @stargate-position-top;
             left: @stargate-position-left;
             & > .rings {
-                display: none;
                 & > .inner-ring {
                     position: absolute;
                     width: @stargate-diameter;
@@ -366,14 +366,271 @@ CENTER is stargate and some lines from chevron boxes
             & > .chevron-holder {
                 & > .chevron {
                     position: absolute;
-                    
+
                     width: 100px;
                     height: 100px;
-                    
-                    background-color: red;
-                    
-                    top: 0%;
-                    left: 0%;
+
+                    &:hover {
+                        & > .chevron-outer {
+                            margin-top: 25px;
+                        }
+                        & > .chevron-inner {
+                            top: -15px;
+                        }
+                    }
+
+
+
+                    @color-red: rgba(170, 30, 20, 1.0);
+                    @color-red-light: rgba(235, 47, 6,1.0);
+                    @border-size: 4px;
+
+                    transition: all .2s ease;
+
+
+                    &:hover {
+                        & .light {
+                            opacity: 1 !Important;
+                        }
+                    }
+
+
+                    & > .chevron-inner {
+                        position: relative;
+                        transition: all .1s ease;
+                        top: 0;
+                        & > .top-line {
+                            position: absolute;
+                            left: -25px;
+                            width: 49px;
+                            height: 20px;
+                            border-top: @border-size solid @color-red;
+                            border-left: @border-size solid @color-red;
+                            border-right: @border-size solid @color-red;
+                            background-color: black;
+                        }
+                        & > .bottom-line {
+                            position: absolute;
+                            left: -8px;
+                            width: 19px;
+                            height: 60px;
+                            border-bottom: @border-size solid @color-red;
+                        }
+                        & > .middle-background {
+                            position: absolute;
+                            left: -8px;
+                            top: 20;
+                            width: 20px;
+                            height: 20px;
+                            background-color: black;
+                        }
+                        & > .side-right {
+                            position: absolute;
+                            left: 3px;
+                            top: 17px;
+                            width: 16px;
+                            height: 45px;
+                            border-right: @border-size solid @color-red;
+                            background-color: black;
+                            transform: rotate(24deg);
+                        }
+                        & > .side-left {
+                            position: absolute;
+                            left: -17px;
+                            top: 17px;
+                            width: 16px;
+                            height: 45px;
+                            border-left: @border-size solid @color-red;
+                            border-radius: 5px;
+                            background-color: black;
+                            transform: rotate(-24deg);
+                        }
+                        & > .light-middle {
+                            position: absolute;
+                            left: -32px;
+                            top: -25px;
+                            width: 70px;
+                            height: 100px;
+                            background: radial-gradient(ellipse at center, @color-red-light 10%, rgba(255, 255, 255, 0) 70%, transparent 100%);
+                            opacity: 0;
+                            transition: all .3s ease;
+                        }
+                    }
+                    & > .chevron-outer {
+                        position: relative;
+                        margin-top: 5px;
+                        transition: all .2s ease;
+                        & > .bottom-line {
+                            position: absolute;
+                            left: calc( -28px + @border-size);
+                            top: 80px;
+                            width: 55px;
+                            height: 10px;
+                            border-bottom: @border-size solid @color-red;
+                        }
+                        & > .bottom-line-top {
+                            position: absolute;
+                            left: calc( -15px + @border-size);
+                            top: 72px;
+                            width: 30px;
+                            height: 15px;
+                            background-color: black;
+                            border-top: @border-size solid @color-red;
+                        }
+
+                        & > .wing-left {
+                            position: absolute;
+                            left: -47px;
+                            top: -14px;
+                            width: 16px;
+                            height: 105px;
+                            border-left: @border-size solid @color-red;
+                            border-right: @border-size solid @color-red;
+                            border-top: @border-size solid @color-red;
+                            border-radius: 5px 5px 0 0;
+                            background-color: black;
+                            transform: rotate(-24deg);
+                            overflow: hidden;
+                            & > .line {
+                                position: absolute;
+                                left: -30px;
+                                width: 100px;
+                                height: 3px;
+                                background-color: @color-red;
+                                transform: rotate(24deg);
+                                &:nth-child(1) {
+                                    top: 30px;
+                                }
+                                &:nth-child(2) {
+                                    top: 45px;
+                                }
+                                &:nth-child(3) {
+                                    top: 60px;
+                                }
+                                &:nth-child(4) {
+                                    top: 75px;
+                                }
+                            }
+                        }
+
+                        & > .wing-right {
+                            position: absolute;
+                            left: 30px;
+                            top: -14px;
+                            width: 16px;
+                            height: 105px;
+                            border-left: @border-size solid @color-red;
+                            border-right: @border-size solid @color-red;
+                            border-top: @border-size solid @color-red;
+                            border-radius: 5px 5px 0 0;
+                            background-color: black;
+                            transform: rotate(24deg);
+                            overflow: hidden;
+                            & > .line {
+                                position: absolute;
+                                left: -30px;
+                                width: 100px;
+                                height: 3px;
+                                background-color: @color-red;
+                                transform: rotate(-24deg);
+                                &:nth-child(1) {
+                                    top: 20px;
+                                }
+                                &:nth-child(2) {
+                                    top: 35px;
+                                }
+                                &:nth-child(3) {
+                                    top: 50px;
+                                }
+                                &:nth-child(4) {
+                                    top: 65px;
+                                }
+                            }
+                        }
+                        & > .light-left {
+                            position: absolute;
+                            left: -57px;
+                            top: -15px;
+                            width: 40px;
+                            height: 100px;
+                            background: radial-gradient(ellipse at center, @color-red-light 10%, rgba(255, 255, 255, 0) 70%, transparent 100%);
+                            transform: rotate(-24deg);
+                            opacity: 0;
+                            transition: all .3s ease;
+                        }
+                        & > .light-right {
+                            position: absolute;
+                            left: 25px;
+                            top: -15px;
+                            width: 40px;
+                            height: 100px;
+                            background: radial-gradient(ellipse at center, @color-red-light 10%, rgba(255, 255, 255, 0) 70%, transparent 100%);
+                            transform: rotate(24deg);
+                            opacity: 0;
+                            transition: all .3s ease;
+                        }
+                    }
+                    &:nth-child(1) {
+                        top: -490px;
+                        left: 0%;
+                        transform: rotate(0deg);
+                    }
+                    &:nth-child(2) {
+                        top: -360px;
+                        left: 272;
+                        transform: rotate(40deg);
+                    }
+                    &:nth-child(3) {
+                        top: -90px;
+                        left: 390;
+                        transform: rotate(80deg);
+                    }
+                    &:nth-child(4) {
+                        top: 220px;
+                        left: 300;
+                        transform: rotate(120deg);
+                    }
+                    &:nth-child(5) {
+                        top: 380px;
+                        left: 50;
+                        transform: rotate(160deg);
+                    }
+                    &:nth-child(6) {
+                        top: 350px;
+                        left: -240;
+                        transform: rotate(200deg);
+                    }
+                    &:nth-child(7) {
+                        top: 130px;
+                        left: -453;
+                        transform: rotate(240deg);
+                    }
+                    &:nth-child(8) {
+                        top: -180px;
+                        left: -473;
+                        transform: rotate(280deg);
+                    }
+                    &:nth-child(9) {
+                        top: -423px;
+                        left: -290;
+                        transform: rotate(320deg);
+                    }
+                    &#chevron-8 {
+                        & div {
+                            border-color: gray;
+                        }
+                        & .line {
+                            background-color: grey;
+                        }
+                    }
+                    &#chevron-9 {
+                        & div {
+                            border-color: gray;
+                        }
+                        & .line {
+                            background-color: grey;
+                        }
+                    }
                 }
             }
         }
