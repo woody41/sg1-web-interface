@@ -285,3 +285,53 @@ Utils
     clear: both;
     display: table;
 }
+
+.flashing-box {
+    overflow: hidden;
+    & > div {
+        -webkit-transition: background-color 200ms linear;
+        -ms-transition: background-color 200ms linear;
+        transition: background-color 200ms linear;
+        &.type1 {
+            width: 10px;
+            height: 5px;
+        }
+        &.type2 {
+            width: 5px;
+            height: 5px;
+        }
+        &.type3 {
+            width: 5px;
+            height: 10px;
+            background-color: blue;
+        }
+        &.pos1 {
+            margin: 5px;
+            margin-left: 5px;
+        }
+        &.pos2 {
+            margin: 5px;
+            margin-left: 10px;
+        }
+        &.pos3 {
+            margin: 5px;
+            margin-left: 15px;
+        }
+        &.color1 {
+            &.light {
+                background-color: rgba(129, 236, 236,1.0);
+            }
+            &.dark {
+                background-color: rgba(129, 236, 236,0.5);
+            }
+        }
+        &.color2 {
+            &.light {
+                background-color: rgba(255, 234, 167,1.0);
+            }
+            &.dark {
+                background-color: rgba(255, 234, 167,0.5);
+            }
+        }
+    }
+}
