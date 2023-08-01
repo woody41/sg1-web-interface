@@ -210,6 +210,18 @@ CENTER is stargate and some lines from chevron boxes
                     top: calc( @stargate-radius-negative - @ring-border-size );
                     left: calc( @stargate-radius-negative - @ring-border-size );
                     z-index: -1;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        transform: translate(-50%, -50%);
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 100%;
+                        animation: growAndShrink 1.5s infinite;
+                        background: radial-gradient(circle, orangered 30%, black 70%);
+                    }
                 }
                 & > .glyph-ring-inner {
                     @glyph-ring-size: 50px;
@@ -892,7 +904,141 @@ CENTER is stargate and some lines from chevron boxes
     & > .status-container {
         width: 100%;
         height: @status-container-height;
-        background-color: rgba(255,0,0,0.2);
+        & > .inner-box {
+            position: relative;
+            height: calc( 100% - 10px);
+            width: 1100px;
+            margin: auto;
+            border: @border-size+2px solid @cyan;
+            border-radius: 10px;
+            & > .border-black-left {
+                position: absolute;
+                left: calc( 0% - @border-size - 2px);
+                top: 20%;
+                width: @border-size+2px;
+                height: 60%;
+                background-color: black;
+            }
+            & > .border-black-right {
+                position: absolute;
+                right: calc( 0% - @border-size - 2px);
+                top: 20%;
+                width: @border-size+2px;
+                height: 60%;
+                background-color: black;
+            }
+            & > .lst-code-1 {
+                position: absolute;
+                top: -40px;
+                left: 0px;
+                color: white;
+                font-size: 30px;
+                letter-spacing: 4px;
+            }
+            & > .lst-code-2 {
+                position: absolute;
+                top: -40px;
+                right: 0px;
+                color: white;
+                font-size: 30px;
+                letter-spacing: 4px;
+            }
+            & > .line-border-top {
+                position: absolute;
+                top: 0;
+                left: 0;
+                & > .line-border {
+                    width: @border-size;
+                    height: 15px;
+                    background-color: @cyan;
+                    float: left;
+                    margin-left: 38px;
+                }
+            }
+            & > .line-border-bottom {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                & > .line-border {
+                    width: @border-size;
+                    height: 15px;
+                    background-color: @cyan;
+                    float: left;
+                    margin-left: 38px;
+                }
+            }
+            & > .flashing-box {
+                position: absolute;
+                top: 0px - @border-size;
+                height: 100%;
+                width: 30px;
+                border: @border-size solid @cyan;
+                border-radius: 3px;
+                &.flashing-box-1 {
+                    right: -50px;
+                }
+                &.flashing-box-2 {
+                    right: -95px;
+                }
+            }
+            & > .notification-box {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                & > .notification-text {
+                    text-align: center;
+                    margin: 0;
+                    font-size: 156px;
+
+                    &.idle {
+                        animation: flashingTextWhite 3s infinite;
+                        color: white;
+                        letter-spacing: 30px;
+                        display: none;
+                    }
+                    &.engaged {
+                        animation: engagedAnimation 3s;
+                        color: black;
+                        letter-spacing: 30px;
+                        display: none;
+                    }
+                    &.locked {
+                        animation: flashingTextWhite 3s infinite;
+                        color: black;
+                        letter-spacing: 30px;
+                        display: none;
+                    }
+                    &.incoming {
+                        animation: flashingTextRed 1s infinite;
+                        color: red;
+                        letter-spacing: 15px;
+                        display: none;
+                    }
+                    &.shutdown {
+                        animation: flashingTextWhite 3s infinite;
+                        color: black;
+                        letter-spacing: 30px;
+                        display: none;
+                    }
+                }
+                &.idle > .idle {
+                    display: block;
+                }
+                &.engaged > .engaged {
+                    display: block;
+                }
+                &.locked > .locked {
+                    display: block;
+                }
+                &.incoming > .incoming {
+                    display: block;
+                }
+                &.shutdown > .shutdown {
+                    display: block;
+                }
+            }
+
+        }
     }
 }
 /*
@@ -1239,5 +1385,51 @@ Utils
     &.active {
         border-color: red !Important;
         background-color: red !Important;
+    }
+}
+
+
+@keyframes flashingTextWhite {
+    0% {
+        color: white;
+    }
+    50% {
+        color: black;
+    }
+    100% {
+        color: white;
+    }
+}
+@keyframes flashingTextRed {
+    0% {
+        color: red;
+    }
+    50% {
+        color: black;
+    }
+    100% {
+        color: red;
+    }
+}
+@keyframes engagedAnimation {
+    0% {
+        color: black;
+    }
+    50% {
+        color: white;
+    }
+    100% {
+        color: black;
+    }
+}
+@keyframes growAndShrink {
+    0%, 100% {
+        transform: scale(0);
+    }
+    18% {
+        transform: scale(0.3);
+    }
+    36% {
+        transform: scale(0);
     }
 }

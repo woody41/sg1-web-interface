@@ -176,6 +176,18 @@ CENTER is stargate and some lines from chevron boxes
   left: calc(calc(calc(700px / 2) * -1) - 5px);
   z-index: -1;
 }
+.center > .stargate-container > .stargate > .rings > .inner-ring::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  animation: growAndShrink 1.5s infinite;
+  background: radial-gradient(circle, orangered 30%, black 70%);
+}
 .center > .stargate-container > .stargate > .rings > .glyph-ring-inner {
   position: absolute;
   width: calc(700px + 50px);
@@ -782,7 +794,139 @@ CENTER is stargate and some lines from chevron boxes
 .center > .status-container {
   width: 100%;
   height: 170px;
-  background-color: rgba(255, 0, 0, 0.2);
+}
+.center > .status-container > .inner-box {
+  position: relative;
+  height: calc(100% - 10px);
+  width: 1100px;
+  margin: auto;
+  border: 5px solid hsl(180, 100%, 30%);
+  border-radius: 10px;
+}
+.center > .status-container > .inner-box > .border-black-left {
+  position: absolute;
+  left: calc(0% - 3px - 2px);
+  top: 20%;
+  width: 5px;
+  height: 60%;
+  background-color: black;
+}
+.center > .status-container > .inner-box > .border-black-right {
+  position: absolute;
+  right: calc(0% - 3px - 2px);
+  top: 20%;
+  width: 5px;
+  height: 60%;
+  background-color: black;
+}
+.center > .status-container > .inner-box > .lst-code-1 {
+  position: absolute;
+  top: -40px;
+  left: 0px;
+  color: white;
+  font-size: 30px;
+  letter-spacing: 4px;
+}
+.center > .status-container > .inner-box > .lst-code-2 {
+  position: absolute;
+  top: -40px;
+  right: 0px;
+  color: white;
+  font-size: 30px;
+  letter-spacing: 4px;
+}
+.center > .status-container > .inner-box > .line-border-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.center > .status-container > .inner-box > .line-border-top > .line-border {
+  width: 3px;
+  height: 15px;
+  background-color: hsl(180, 100%, 30%);
+  float: left;
+  margin-left: 38px;
+}
+.center > .status-container > .inner-box > .line-border-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.center > .status-container > .inner-box > .line-border-bottom > .line-border {
+  width: 3px;
+  height: 15px;
+  background-color: hsl(180, 100%, 30%);
+  float: left;
+  margin-left: 38px;
+}
+.center > .status-container > .inner-box > .flashing-box {
+  position: absolute;
+  top: -3px;
+  height: 100%;
+  width: 30px;
+  border: 3px solid hsl(180, 100%, 30%);
+  border-radius: 3px;
+}
+.center > .status-container > .inner-box > .flashing-box.flashing-box-1 {
+  right: -50px;
+}
+.center > .status-container > .inner-box > .flashing-box.flashing-box-2 {
+  right: -95px;
+}
+.center > .status-container > .inner-box > .notification-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.center > .status-container > .inner-box > .notification-box > .notification-text {
+  text-align: center;
+  margin: 0;
+  font-size: 156px;
+}
+.center > .status-container > .inner-box > .notification-box > .notification-text.idle {
+  animation: flashingTextWhite 3s infinite;
+  color: white;
+  letter-spacing: 30px;
+  display: none;
+}
+.center > .status-container > .inner-box > .notification-box > .notification-text.engaged {
+  animation: engagedAnimation 3s;
+  color: black;
+  letter-spacing: 30px;
+  display: none;
+}
+.center > .status-container > .inner-box > .notification-box > .notification-text.locked {
+  animation: flashingTextWhite 3s infinite;
+  color: black;
+  letter-spacing: 30px;
+  display: none;
+}
+.center > .status-container > .inner-box > .notification-box > .notification-text.incoming {
+  animation: flashingTextRed 1s infinite;
+  color: red;
+  letter-spacing: 15px;
+  display: none;
+}
+.center > .status-container > .inner-box > .notification-box > .notification-text.shutdown {
+  animation: flashingTextWhite 3s infinite;
+  color: black;
+  letter-spacing: 30px;
+  display: none;
+}
+.center > .status-container > .inner-box > .notification-box.idle > .idle {
+  display: block;
+}
+.center > .status-container > .inner-box > .notification-box.engaged > .engaged {
+  display: block;
+}
+.center > .status-container > .inner-box > .notification-box.locked > .locked {
+  display: block;
+}
+.center > .status-container > .inner-box > .notification-box.incoming > .incoming {
+  display: block;
+}
+.center > .status-container > .inner-box > .notification-box.shutdown > .shutdown {
+  display: block;
 }
 /*
 RIGHT Panel are chevron boxes 
@@ -1115,5 +1259,50 @@ Utils
 .generated-line.active {
   border-color: red !Important;
   background-color: red !Important;
+}
+@keyframes flashingTextWhite {
+  0% {
+    color: white;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: white;
+  }
+}
+@keyframes flashingTextRed {
+  0% {
+    color: red;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: red;
+  }
+}
+@keyframes engagedAnimation {
+  0% {
+    color: black;
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    color: black;
+  }
+}
+@keyframes growAndShrink {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  18% {
+    transform: scale(0.3);
+  }
+  36% {
+    transform: scale(0);
+  }
 }
 /*# sourceMappingURL=styles.css.map */
