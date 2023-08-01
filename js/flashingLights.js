@@ -63,7 +63,6 @@ function applyClassSwap() {
             }
         });
     });
-    console.log("class swap");
     setTimeout(applyClassSwap, Math.floor(Math.random() * 400 + 100));
 }
 
