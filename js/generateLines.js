@@ -57,15 +57,26 @@ function drawLineBetweenDivs(div1Id, div2Id, anchor1, anchor2, extraClass) {
 
 
 
-// Call the function with the IDs of the divs and anchor sides
-drawLineBetweenDivs('glyph7-a', 'glyph7-b', 'top', 'right', 'line-chevron7');
-drawLineBetweenDivs('glyph6-a', 'glyph6-b', 'top', 'right', 'line-chevron6');
-drawLineBetweenDivs('glyph5-a', 'glyph5-b', 'top', 'right', 'line-chevron5');
-drawLineBetweenDivs('glyph4-a', 'glyph4-b', 'top', 'right', 'line-chevron4');
-drawLineBetweenDivs('glyph1-a', 'glyph1-b', 'left', 'right', 'line-chevron1');
-drawLineBetweenDivs('glyph2-a', 'glyph2-b', 'left', 'right', 'line-chevron2');
-drawLineBetweenDivs('glyph3-a', 'glyph3-b', 'left', 'right', 'line-chevron3');
-drawLineBetweenDivs('glyph4-b', 'glyph4-c', 'left', 'right', 'line-chevron4');
-drawLineBetweenDivs('glyph7-b', 'glyph7-c', 'left', 'right', 'line-chevron7');
-drawLineBetweenDivs('glyph6-b', 'glyph6-c', 'left', 'right', 'line-chevron6');
-drawLineBetweenDivs('glyph5-b', 'glyph5-c', 'left', 'right', 'line-chevron5');
+
+
+function regeneratePaths() {
+    const elementsToRemove = document.querySelectorAll(`div.generated-line`);
+    elementsToRemove.forEach((element) => {
+        element.remove();
+    });
+
+    // Call the function with the IDs of the divs and anchor sides
+    drawLineBetweenDivs('glyph7-a', 'glyph7-b', 'top', 'right', 'line-chevron7');
+    drawLineBetweenDivs('glyph6-a', 'glyph6-b', 'top', 'right', 'line-chevron6');
+    drawLineBetweenDivs('glyph5-a', 'glyph5-b', 'top', 'right', 'line-chevron5');
+    drawLineBetweenDivs('glyph4-a', 'glyph4-b', 'top', 'right', 'line-chevron4');
+    drawLineBetweenDivs('glyph1-a', 'glyph1-b', 'left', 'right', 'line-chevron1');
+    drawLineBetweenDivs('glyph2-a', 'glyph2-b', 'left', 'right', 'line-chevron2');
+    drawLineBetweenDivs('glyph3-a', 'glyph3-b', 'left', 'right', 'line-chevron3');
+    drawLineBetweenDivs('glyph4-b', 'glyph4-c', 'left', 'right', 'line-chevron4');
+    drawLineBetweenDivs('glyph7-b', 'glyph7-c', 'left', 'right', 'line-chevron7');
+    drawLineBetweenDivs('glyph6-b', 'glyph6-c', 'left', 'right', 'line-chevron6');
+    drawLineBetweenDivs('glyph5-b', 'glyph5-c', 'left', 'right', 'line-chevron5');
+}
+window.addEventListener('resize', regeneratePaths);
+regeneratePaths();
