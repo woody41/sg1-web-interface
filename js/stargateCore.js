@@ -1,3 +1,4 @@
+let notificationTimeout;
 function lockChevron(number, incomming = false) {
     const chevron = `chevron-${number}`;
     const chevron_status = `chevron-status-${number}`;
@@ -18,7 +19,7 @@ function lockChevron(number, incomming = false) {
         console.error(`Div with id "${chevronStatusDiv}" not found.`);
     }
     if (incomming) {
-        activeChevronLine(number);
+        activeChevronLine(number, incomming);
     } else {
         setNotificationText("engaged");
         setTimeout(() => activeChevronLine(number), 1000);
@@ -45,7 +46,7 @@ function unlockChevrons() {
         deactiveChevronLines();
     }
     removeGlyphs();
-    setNotificationText("idle");
+    setNotificationText("shutdown");
 }
 
 function activateChevron(number, symbol) {
@@ -77,10 +78,13 @@ function deactivateChevron(number) {
     }
 }
 
-function activeChevronLine(num) {
+function activeChevronLine(num, incoming = false) {
     const divs = document.querySelectorAll(`.line-chevron${num}`);
     const glyph = document.getElementById(`glyph${num}`);
     glyph.classList.add('active');
+    if (incoming) {
+        glyph.classList.add('incoming');
+    }
     divs.forEach(div => {
         div.classList.add('active');
     });
@@ -93,22 +97,26 @@ function deactiveChevronLines() {
         divs.forEach(div => {
             div.classList.remove('active');
             glyph.classList.remove('active');
+            glyph.classList.remove('incoming');
         });
     }
 }
 
 function setNotificationText(text) {
+    clearTimeout(notificationTimeout);
     /*none, idle, incoming, locked, engaged*/
     const notificationText = document.getElementById("status-box");
     notificationText.classList.remove("idle");
     notificationText.classList.remove("incoming");
     notificationText.classList.remove("locked");
     notificationText.classList.remove("engaged");
+    notificationText.classList.remove("shutdown");
 
     if (text != "none") {
-        notificationText.classList.add(text);
-        if (text === "engaged") {
-            setTimeout(() => setNotificationText("none"), 2500);
+        //favor for css
+        setTimeout(() => notificationText.classList.add(text), 10);
+        if (text === "shutdown") {
+            notificationTimeout = setTimeout(() => setNotificationText("idle"), 2500);
         }
     }
 }
@@ -195,12 +203,38 @@ function removeGlyphs() {
 
 function openGate() {
     setNotificationText("locked");
+
+    const gateBackground = document.getElementById("stargate-background");
+    gateBackground.classList.add("active");
+    setTimeout(() => openGateInfinite(), 2000);
+}
+
+function openGateInfinite() {
+    const gateBackground = document.getElementById("stargate-background");
+    gateBackground.classList.add("infinite");
+}
+
+function shutdownGate() {
+
+    const gateBackground = document.getElementById("stargate-background");
+    gateBackground.classList.add("shutdown");
+    unlockChevrons();
+    setDestination("");
+    setTimeout(() => resetGateAnimation(), 2000);
+}
+function resetGateAnimation() {
+
+    const gateBackground = document.getElementById("stargate-background");
+    gateBackground.classList.remove("active");
+    gateBackground.classList.remove("infinite");
+    gateBackground.classList.remove("shutdown");
 }
 
 /*this shitty code is to present how command works. This is not a toy or game, it is to monitor real star gate and this is only demonstration*/
 //call S H D k Z P A
 function activateStargate() {
     setNotificationText("none");
+    setDestination("P3W-451");
     startRotation();
     setTimeout(() => stopRotation(), 3000);
     setTimeout(() => activateChevron(1, "S"), 3200);
@@ -222,10 +256,19 @@ function activateStargate() {
     setTimeout(() => startRotation(), 24700);
     setTimeout(() => stopRotation(), 28000);
     setTimeout(() => activateChevron(7, "A"), 28200);
-    setTimeout(() => setDestination("P3W-451"), 28200);
-    setTimeout(() => openGate(), 28300);
+    setTimeout(() => openGate(), 31200); //3 seconds are optimal, last glyph is avail from stargate animation
+    setTimeout(() => shutdownGate(), 40000);
 
+    setTimeout(() => setNotificationText("incoming"), 45000);
+    setTimeout(() => setDestination("OFFWRLD"), 45000);
+    setTimeout(() => lockChevron(1, true), 45000);
+    setTimeout(() => lockChevron(2, true), 47000);
+    setTimeout(() => lockChevron(3, true), 49000);
+    setTimeout(() => lockChevron(4, true), 51000);
+    setTimeout(() => lockChevron(5, true), 53000);
+    setTimeout(() => lockChevron(6, true), 55000);
+    setTimeout(() => lockChevron(7, true), 57000);
+    setTimeout(() => openGate(), 58000);
+    setTimeout(() => shutdownGate(), 68000);
 
-    setTimeout(() => unlockChevrons(), 40000);
-    setTimeout(() => setDestination(""), 28200);
 }

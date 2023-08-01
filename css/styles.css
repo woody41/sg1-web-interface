@@ -178,18 +178,44 @@ CENTER is stargate and some lines from chevron boxes
   top: calc(calc(calc(700px / 2) * -1) - 5px);
   left: calc(calc(calc(700px / 2) * -1) - 5px);
   z-index: -1;
+  overflow: hidden;
 }
 .center > .stargate-container > .stargate > .rings > .inner-ring::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
+  overflow: hidden;
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  animation: growAndShrink 1.5s infinite;
+  animation: inactiveGate 1.5s infinite;
   background: radial-gradient(circle, orangered 30%, black 70%);
+}
+.center > .stargate-container > .stargate > .rings > .inner-ring.active::before {
+  display: none;
+}
+.center > .stargate-container > .stargate > .rings > .inner-ring.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  transform: scale(0);
+  animation: loadGate 2s 1;
+  background: radial-gradient(circle, lightskyblue 30%, black 70%);
+}
+.center > .stargate-container > .stargate > .rings > .inner-ring.infinite::after {
+  animation: activeGate 4s infinite !Important;
+}
+.center > .stargate-container > .stargate > .rings > .inner-ring.shutdown::after {
+  opacity: 0;
+  transition: opacity 2s ease;
 }
 .center > .stargate-container > .stargate > .rings > .glyph-ring-inner {
   position: absolute;
@@ -894,6 +920,7 @@ CENTER is stargate and some lines from chevron boxes
 }
 .center > .status-container > .inner-box > .notification-box > .notification-text.engaged {
   animation: engagedAnimation 3s;
+  animation-iteration-count: 1;
   color: black;
   letter-spacing: 30px;
   display: none;
@@ -911,9 +938,8 @@ CENTER is stargate and some lines from chevron boxes
   display: none;
 }
 .center > .status-container > .inner-box > .notification-box > .notification-text.shutdown {
-  animation: flashingTextWhite 3s infinite;
-  color: black;
-  letter-spacing: 30px;
+  color: red;
+  letter-spacing: 0px;
   display: none;
 }
 .center > .status-container > .inner-box > .notification-box.idle > .idle {
@@ -1010,8 +1036,22 @@ RIGHT Panel are chevron boxes
   border-radius: 2px;
   position: relative;
 }
+.right-panel > .glyph-container > .glyph > .glyph-number {
+  position: absolute;
+  bottom: 0;
+  left: -50px;
+  color: white;
+  font-size: 50px;
+  display: none;
+}
 .right-panel > .glyph-container > .glyph.active {
   border-color: red;
+}
+.right-panel > .glyph-container > .glyph.active > .glyph-number {
+  display: block;
+}
+.right-panel > .glyph-container > .glyph.incoming {
+  background-color: red;
 }
 .right-panel > .glyph-container > .glyph > .line {
   position: absolute;
@@ -1313,7 +1353,7 @@ Utils
     color: black;
   }
 }
-@keyframes growAndShrink {
+@keyframes inactiveGate {
   0%,
   100% {
     transform: scale(0);
@@ -1323,6 +1363,23 @@ Utils
   }
   36% {
     transform: scale(0);
+  }
+}
+@keyframes loadGate {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+@keyframes activeGate {
+  0%,
+  100% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(0.8);
   }
 }
 @keyframes rotate {
