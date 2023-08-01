@@ -10,7 +10,8 @@ This repository contains Star Gate web interface.
 
 ## Demo
 
-Demo is available! [Visit my page](https://softonics.cz/tests/stargate/)
+Demo is available! [Visit my page](https://softonics.cz/tests/stargate/) 
+And if you don't knowwhat to do, just try click the keyboard icon. 
 
 
 ## Installation
