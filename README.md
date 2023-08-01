@@ -8,6 +8,11 @@ This repository contains Star Gate web interface.
 ![Logo](https://ctrlv.cz/shots/2023/08/01/cVse.png)
 
 
+## Demo
+
+Demo is available! [Visit my page](https://softonics.cz/tests/stargate/)
+
+
 ## Installation
 
 1. ### Deployment
@@ -52,5 +57,4 @@ SOFTWARE.
 ## Authors
 
 - [@woody41](https://www.github.com/woody41)
-
 
