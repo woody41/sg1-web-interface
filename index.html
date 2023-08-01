@@ -24,7 +24,7 @@
             </div>
             <div class="chevron-status">
                 <div class="chevron-status-container">
-                    <div class="chevron-status-box" id="chevron-status-1"> <!-- active is possible class -->
+                    <div class="chevron-status-box" id="chevron-status-1">
                         <div class="chevron-status-red"></div>
                         <div class="chevron-status-green"></div>
                         <div class="chevron-status-text">1</div>
@@ -75,7 +75,7 @@
                     <div class="rings">
                         <div class="inner-ring"></div>
                         <div class="glyph-ring-inner"></div>
-                        <div class="glyph-ring-outer">
+                        <div class="glyph-ring-outer" id="stargate-rotation">
                             <div class="diagonal-line"></div>
                             <div class="diagonal-line"></div>
                             <div class="diagonal-line"></div>
@@ -610,7 +610,7 @@
                     <span>9</span>
                 </div>
             </div>
-            <div class="bottom-center"><img src="assets/images/keyboard.png" alt=""/></div>
+            <div class="bottom-center" onclick="activateStargate()"><img src="assets/images/keyboard.png" alt=""/></div>
             <div class="bottom-right">
                 <p>User: <span>Sgt. W. Davis 102951-8</span></p>
                 <p>Status: <span>Active</span></p>
@@ -622,5 +622,6 @@
         <script src="js/randomBinary.js" type="text/javascript"></script>
         <script src="js/flashingLights.js" type="text/javascript"></script>
         <script src="js/generateLines.js" type="text/javascript"></script>
+        <script src="js/stargateCore.js" type="text/javascript"></script>
     </body>
 </html>
