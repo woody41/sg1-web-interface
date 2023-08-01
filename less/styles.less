@@ -193,6 +193,8 @@ CENTER is stargate and some lines from chevron boxes
         @stargate-position-top: 54%;
         @stargate-position-left: 48%;
         position: relative;
+
+
         & > .stargate {
             position: relative;
             top: @stargate-position-top;
@@ -327,7 +329,7 @@ CENTER is stargate and some lines from chevron boxes
                     }
                 }
                 & > .outer-ring-1 {
-                    @ring-size: 165px;
+                    @ring-size: 170px;
                     position: absolute;
                     @ring-border-size: 3px;
                     width: calc( @stargate-diameter + @ring-size );
@@ -339,7 +341,7 @@ CENTER is stargate and some lines from chevron boxes
                     z-index: -3;
                 }
                 & > .outer-ring-2 {
-                    @ring-size: 200px;
+                    @ring-size: 225px;
                     @ring-border-size: 3px;
                     position: absolute;
                     width: calc( @stargate-diameter + @ring-size );
@@ -362,6 +364,124 @@ CENTER is stargate and some lines from chevron boxes
                     left: calc( calc( @stargate-radius-negative - @ring-border-size ) - @ring-size / 2 );
                     z-index: -3;
                 }
+                & > .light {
+                    position: absolute;
+                    @light-width: 12px;
+                    @light-height: 80px;
+                    &.light-top-right {
+                        top: calc( -270px - calc( @light-height / 2 ));
+                        left: calc( 450px - calc( @light-width / 2 ));
+                        width: @light-width;
+                        height: @light-height;
+                        border-radius: 10px;
+                        background-color: white;
+
+                        transform: rotate(-32deg);
+                    }
+                    &.light-top-left {
+                        top: calc( -270px - calc( @light-height / 2 ));
+                        left: calc( -450px - calc( @light-width / 2 ));
+                        width: @light-width;
+                        height: @light-height;
+                        border-radius: 10px;
+                        background-color: white;
+
+                        transform: rotate(32deg);
+                    }
+                    &.light-bottom-right {
+                        top: calc( 410px - calc( @light-height / 2 ));
+                        left: calc( 335px - calc( @light-width / 2 ));
+                        width: @light-width;
+                        height: @light-height;
+                        border-radius: 10px;
+                        background-color: white;
+
+                        transform: rotate(231deg);
+                    }
+                    &.light-bottom-left {
+                        top: calc( 410px - calc( @light-height / 2 ));
+                        left: calc( -335px - calc( @light-width / 2 ));
+                        width: @light-width;
+                        height: @light-height;
+                        border-radius: 10px;
+                        background-color: white;
+
+                        transform: rotate(-231deg);
+                    }
+                }
+
+                & > .light-container {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    &.item1 {
+                        transform: rotate(59deg);
+                    }
+                    &.item2 {
+                        transform: rotate(140deg);
+                    }
+                    &.item3 {
+                        transform: rotate(-140deg);
+                    }
+                    &.item4 {
+                        transform: rotate(-59deg);
+                    }
+                    & > .light {
+                        @grip-width: 80px;
+                        @grip-height: 12px;
+                        position: absolute;
+                        top: calc( -510px - calc( @grip-height / 2 ));
+                        left: calc( 0px - calc( @grip-width / 2 ));
+                        width: @grip-width;
+                        height: @grip-height;
+                        border-radius: 10px;
+                        background-color: white;
+                    }
+                }
+                & > .grip-container {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    &.item1 {
+                        transform: rotate(20deg);
+                    }
+                    &.item2 {
+                        transform: rotate(140deg);
+                    }
+                    &.item3 {
+                        transform: rotate(180deg);
+                    }
+                    &.item4 {
+                        transform: rotate(-140deg);
+                    }
+                    &.item5 {
+                        transform: rotate(-20deg);
+                    }
+                    & > .grip-lower {
+                        @grip-width: 70px;
+                        @grip-height: 25px;
+                        position: absolute;
+                        top: calc( -458px - calc( @grip-height / 2 ));
+                        left: calc( 0px - calc( @grip-width / 2 ));
+                        width: @grip-width;
+                        height: @grip-height;
+                        border: 2px solid white;
+                        border-radius: 10px;
+                        background-color: black;
+                    }
+                    & > .grip-upper {
+                        @grip-width: 25px;
+                        @grip-height: 48px;
+                        position: absolute;
+                        top: calc( -467px - calc( @grip-height / 2 ));
+                        left: calc( 0px - calc( @grip-width / 2 ));
+                        width: @grip-width;
+                        height: @grip-height;
+                        border: 2px solid white;
+                        border-top: none;
+                        border-radius: 0 0 10px 10px;
+                    }
+                }
             }
             & > .chevron-holder {
                 & > .chevron {
@@ -370,7 +490,7 @@ CENTER is stargate and some lines from chevron boxes
                     width: 100px;
                     height: 100px;
 
-                    &:hover {
+                    &.active {
                         & > .chevron-outer {
                             margin-top: 25px;
                         }
@@ -388,7 +508,7 @@ CENTER is stargate and some lines from chevron boxes
                     transition: all .2s ease;
 
 
-                    &:hover {
+                    &.locked {
                         & .light {
                             opacity: 1 !Important;
                         }
@@ -615,20 +735,154 @@ CENTER is stargate and some lines from chevron boxes
                         left: -290;
                         transform: rotate(320deg);
                     }
-                    &#chevron-8 {
+                    &.inactive {
                         & div {
-                            border-color: gray;
+                            border-color: gray !Important;
                         }
                         & .line {
-                            background-color: grey;
+                            background-color: grey !Important;
                         }
                     }
-                    &#chevron-9 {
-                        & div {
-                            border-color: gray;
+                }
+            }
+            & > .line-container {
+                position: relative;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                & > .linear {
+                    position: absolute;
+                    left: 0px;
+                    border: 2px solid @cyan;
+                    &.line-chevron4 {
+                        top: -590px;
+                        width: 1000px;
+                        left: -400px;
+                    }
+                    &.line-chevron5 {
+                        top: -570px;
+                        width: 930px;
+                        left: -330px;
+
+                    }
+                    &.line-chevron6 {
+                        top: -550px;
+                        width: 870px;
+                        left:  -270;
+                    }
+                    &.line-chevron7 {
+                        top: -530px;
+                        width: 600px;
+                    }
+                }
+                & > .line.line-chevron1 {
+                    position: absolute;
+                    top: -390px;
+                    left: 290px;
+                    width: 70px;
+                    border: 2px solid @cyan;
+                    transform: rotate(132deg);
+                    & > .line {
+                        position: absolute;
+                        top: -29px;
+                        left: -62px;
+                        width: 70px;
+                        border: 2px solid @cyan;
+                        transform: rotate(-132deg);
+                    }
+                }
+                & > .line.line-chevron2 {
+                    position: absolute;
+                    top: -95px;
+                    left: 460px;
+                    width: 70px;
+                    border: 2px solid @cyan;
+                }
+                & > .line.line-chevron3 {
+                    position: absolute;
+                    top: 250px;
+                    left: 400px;
+                    width: 70px;
+                    border: 2px solid @cyan;
+                }
+                & > .line.line-chevron7>.line {
+
+                    position: absolute;
+                    top: 0px;
+                    left: -2;
+                    height: 50px;
+                    border: 2px solid @cyan;
+                }
+                & > .left-line-container > .line {
+                    &.line-chevron6 {
+                        position: absolute;
+                        top: -395px;
+                        left: -356px;
+                        width: 70px;
+                        border: 2px solid @cyan;
+                        transform: rotate(-132deg);
+                        & > .line {
+                            position: absolute;
+                            top: 22px;
+                            left: 61px;
+                            width: 70px;
+                            border: 2px solid @cyan;
+                            transform: rotate(42deg);
+                            & > .line {
+                                position: absolute;
+                                top: 34px;
+                                left: 50px;
+                                width: 93px;
+                                border: 2px solid @cyan;
+                                transform: rotate(52deg);
+                            }
                         }
-                        & .line {
-                            background-color: grey;
+                    }
+                    &.line-chevron5 {
+                        position: absolute;
+                        top: -104px;
+                        left: -552px;
+                        width: 70px;
+                        border: 2px solid @cyan;
+                        & > .line {
+                            position: absolute;
+                            top: -162px;
+                            left: -162px;
+                            width: 320px;
+                            border: 2px solid @cyan;
+                            transform: rotate(90deg);
+                            & > .line {
+                                position: absolute;
+                                top: -112px;
+                                left: -207px;
+                                width: 262px;
+
+                                border: 2px solid @cyan;
+                                transform: rotate(57deg);
+                            }
+                        }
+                    }
+                    &.line-chevron4 {
+                        position: absolute;
+                        top: 246px;
+                        left: -588px;
+                        width: 170px;
+                        border: 2px solid @cyan;
+                        & > .line {
+                            position: absolute;
+                            top: -357px;
+                            left: -358px;
+                            width: 710px;
+                            border: 2px solid @cyan;
+                            transform: rotate(90deg);
+                            & > .line {
+                                position: absolute;
+                                top: -96px;
+                                left: -177px;
+                                width: 224px;
+                                border: 2px solid @cyan;
+                                transform: rotate(56deg);
+                            }
                         }
                     }
                 }
@@ -924,7 +1178,9 @@ Utils
 
 .generated-line {
     position: absolute;
-    border: 2px solid @cyan;
+    height: 2px;
+    border: 1px solid @cyan;
+    background-color: @cyan;
     border-radius: 10px;
     transform-origin: 0 0;
 }
@@ -976,5 +1232,12 @@ Utils
                 background-color: rgba(255, 234, 167,0.5);
             }
         }
+    }
+}
+
+.line, .generated-line {
+    &.active {
+        border-color: red !Important;
+        background-color: red !Important;
     }
 }

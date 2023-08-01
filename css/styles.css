@@ -270,22 +270,22 @@ CENTER is stargate and some lines from chevron boxes
 }
 .center > .stargate-container > .stargate > .rings > .outer-ring-1 {
   position: absolute;
-  width: calc(700px + 165px);
-  height: calc(700px + 165px);
+  width: calc(700px + 170px);
+  height: calc(700px + 170px);
   border: 3px solid hsl(180, 100%, 30%);
   border-radius: 100%;
-  top: calc(calc(calc(calc(700px / 2) * -1) - 3px) - 165px / 2);
-  left: calc(calc(calc(calc(700px / 2) * -1) - 3px) - 165px / 2);
+  top: calc(calc(calc(calc(700px / 2) * -1) - 3px) - 170px / 2);
+  left: calc(calc(calc(calc(700px / 2) * -1) - 3px) - 170px / 2);
   z-index: -3;
 }
 .center > .stargate-container > .stargate > .rings > .outer-ring-2 {
   position: absolute;
-  width: calc(700px + 200px);
-  height: calc(700px + 200px);
+  width: calc(700px + 225px);
+  height: calc(700px + 225px);
   border: 3px solid hsl(180, 100%, 30%);
   border-radius: 100%;
-  top: calc(calc(calc(calc(700px / 2) * -1) - 3px) - 200px / 2);
-  left: calc(calc(calc(calc(700px / 2) * -1) - 3px) - 200px / 2);
+  top: calc(calc(calc(calc(700px / 2) * -1) - 3px) - 225px / 2);
+  left: calc(calc(calc(calc(700px / 2) * -1) - 3px) - 225px / 2);
   z-index: -3;
 }
 .center > .stargate-container > .stargate > .rings > .outer-ring-3 {
@@ -298,19 +298,124 @@ CENTER is stargate and some lines from chevron boxes
   left: calc(calc(calc(calc(700px / 2) * -1) - 15px) - 240px / 2);
   z-index: -3;
 }
+.center > .stargate-container > .stargate > .rings > .light {
+  position: absolute;
+}
+.center > .stargate-container > .stargate > .rings > .light.light-top-right {
+  top: calc(-270px - calc(80px / 2));
+  left: calc(450px - calc(12px / 2));
+  width: 12px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: white;
+  transform: rotate(-32deg);
+}
+.center > .stargate-container > .stargate > .rings > .light.light-top-left {
+  top: calc(-270px - calc(80px / 2));
+  left: calc(-450px - calc(12px / 2));
+  width: 12px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: white;
+  transform: rotate(32deg);
+}
+.center > .stargate-container > .stargate > .rings > .light.light-bottom-right {
+  top: calc(410px - calc(80px / 2));
+  left: calc(335px - calc(12px / 2));
+  width: 12px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: white;
+  transform: rotate(231deg);
+}
+.center > .stargate-container > .stargate > .rings > .light.light-bottom-left {
+  top: calc(410px - calc(80px / 2));
+  left: calc(-335px - calc(12px / 2));
+  width: 12px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: white;
+  transform: rotate(-231deg);
+}
+.center > .stargate-container > .stargate > .rings > .light-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.center > .stargate-container > .stargate > .rings > .light-container.item1 {
+  transform: rotate(59deg);
+}
+.center > .stargate-container > .stargate > .rings > .light-container.item2 {
+  transform: rotate(140deg);
+}
+.center > .stargate-container > .stargate > .rings > .light-container.item3 {
+  transform: rotate(-140deg);
+}
+.center > .stargate-container > .stargate > .rings > .light-container.item4 {
+  transform: rotate(-59deg);
+}
+.center > .stargate-container > .stargate > .rings > .light-container > .light {
+  position: absolute;
+  top: calc(-510px - calc(12px / 2));
+  left: calc(0px - calc(80px / 2));
+  width: 80px;
+  height: 12px;
+  border-radius: 10px;
+  background-color: white;
+}
+.center > .stargate-container > .stargate > .rings > .grip-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.center > .stargate-container > .stargate > .rings > .grip-container.item1 {
+  transform: rotate(20deg);
+}
+.center > .stargate-container > .stargate > .rings > .grip-container.item2 {
+  transform: rotate(140deg);
+}
+.center > .stargate-container > .stargate > .rings > .grip-container.item3 {
+  transform: rotate(180deg);
+}
+.center > .stargate-container > .stargate > .rings > .grip-container.item4 {
+  transform: rotate(-140deg);
+}
+.center > .stargate-container > .stargate > .rings > .grip-container.item5 {
+  transform: rotate(-20deg);
+}
+.center > .stargate-container > .stargate > .rings > .grip-container > .grip-lower {
+  position: absolute;
+  top: calc(-458px - calc(25px / 2));
+  left: calc(0px - calc(70px / 2));
+  width: 70px;
+  height: 25px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background-color: black;
+}
+.center > .stargate-container > .stargate > .rings > .grip-container > .grip-upper {
+  position: absolute;
+  top: calc(-467px - calc(48px / 2));
+  left: calc(0px - calc(25px / 2));
+  width: 25px;
+  height: 48px;
+  border: 2px solid white;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+}
 .center > .stargate-container > .stargate > .chevron-holder > .chevron {
   position: absolute;
   width: 100px;
   height: 100px;
   transition: all 0.2s ease;
 }
-.center > .stargate-container > .stargate > .chevron-holder > .chevron:hover > .chevron-outer {
+.center > .stargate-container > .stargate > .chevron-holder > .chevron.active > .chevron-outer {
   margin-top: 25px;
 }
-.center > .stargate-container > .stargate > .chevron-holder > .chevron:hover > .chevron-inner {
+.center > .stargate-container > .stargate > .chevron-holder > .chevron.active > .chevron-inner {
   top: -15px;
 }
-.center > .stargate-container > .stargate > .chevron-holder > .chevron:hover .light {
+.center > .stargate-container > .stargate > .chevron-holder > .chevron.locked .light {
   opacity: 1 !Important;
 }
 .center > .stargate-container > .stargate > .chevron-holder > .chevron > .chevron-inner {
@@ -531,17 +636,148 @@ CENTER is stargate and some lines from chevron boxes
   left: -290;
   transform: rotate(320deg);
 }
-.center > .stargate-container > .stargate > .chevron-holder > .chevron#chevron-8 div {
-  border-color: gray;
+.center > .stargate-container > .stargate > .chevron-holder > .chevron.inactive div {
+  border-color: gray !Important;
 }
-.center > .stargate-container > .stargate > .chevron-holder > .chevron#chevron-8 .line {
-  background-color: grey;
+.center > .stargate-container > .stargate > .chevron-holder > .chevron.inactive .line {
+  background-color: grey !Important;
 }
-.center > .stargate-container > .stargate > .chevron-holder > .chevron#chevron-9 div {
-  border-color: gray;
+.center > .stargate-container > .stargate > .line-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
-.center > .stargate-container > .stargate > .chevron-holder > .chevron#chevron-9 .line {
-  background-color: grey;
+.center > .stargate-container > .stargate > .line-container > .linear {
+  position: absolute;
+  left: 0px;
+  border: 2px solid hsl(180, 100%, 30%);
+}
+.center > .stargate-container > .stargate > .line-container > .linear.line-chevron4 {
+  top: -590px;
+  width: 1000px;
+  left: -400px;
+}
+.center > .stargate-container > .stargate > .line-container > .linear.line-chevron5 {
+  top: -570px;
+  width: 930px;
+  left: -330px;
+}
+.center > .stargate-container > .stargate > .line-container > .linear.line-chevron6 {
+  top: -550px;
+  width: 870px;
+  left: -270;
+}
+.center > .stargate-container > .stargate > .line-container > .linear.line-chevron7 {
+  top: -530px;
+  width: 600px;
+}
+.center > .stargate-container > .stargate > .line-container > .line.line-chevron1 {
+  position: absolute;
+  top: -390px;
+  left: 290px;
+  width: 70px;
+  border: 2px solid hsl(180, 100%, 30%);
+  transform: rotate(132deg);
+}
+.center > .stargate-container > .stargate > .line-container > .line.line-chevron1 > .line {
+  position: absolute;
+  top: -29px;
+  left: -62px;
+  width: 70px;
+  border: 2px solid hsl(180, 100%, 30%);
+  transform: rotate(-132deg);
+}
+.center > .stargate-container > .stargate > .line-container > .line.line-chevron2 {
+  position: absolute;
+  top: -95px;
+  left: 460px;
+  width: 70px;
+  border: 2px solid hsl(180, 100%, 30%);
+}
+.center > .stargate-container > .stargate > .line-container > .line.line-chevron3 {
+  position: absolute;
+  top: 250px;
+  left: 400px;
+  width: 70px;
+  border: 2px solid hsl(180, 100%, 30%);
+}
+.center > .stargate-container > .stargate > .line-container > .line.line-chevron7 > .line {
+  position: absolute;
+  top: 0px;
+  left: -2;
+  height: 50px;
+  border: 2px solid hsl(180, 100%, 30%);
+}
+.center > .stargate-container > .stargate > .line-container > .left-line-container > .line.line-chevron6 {
+  position: absolute;
+  top: -395px;
+  left: -356px;
+  width: 70px;
+  border: 2px solid hsl(180, 100%, 30%);
+  transform: rotate(-132deg);
+}
+.center > .stargate-container > .stargate > .line-container > .left-line-container > .line.line-chevron6 > .line {
+  position: absolute;
+  top: 22px;
+  left: 61px;
+  width: 70px;
+  border: 2px solid hsl(180, 100%, 30%);
+  transform: rotate(42deg);
+}
+.center > .stargate-container > .stargate > .line-container > .left-line-container > .line.line-chevron6 > .line > .line {
+  position: absolute;
+  top: 34px;
+  left: 50px;
+  width: 93px;
+  border: 2px solid hsl(180, 100%, 30%);
+  transform: rotate(52deg);
+}
+.center > .stargate-container > .stargate > .line-container > .left-line-container > .line.line-chevron5 {
+  position: absolute;
+  top: -104px;
+  left: -552px;
+  width: 70px;
+  border: 2px solid hsl(180, 100%, 30%);
+}
+.center > .stargate-container > .stargate > .line-container > .left-line-container > .line.line-chevron5 > .line {
+  position: absolute;
+  top: -162px;
+  left: -162px;
+  width: 320px;
+  border: 2px solid hsl(180, 100%, 30%);
+  transform: rotate(90deg);
+}
+.center > .stargate-container > .stargate > .line-container > .left-line-container > .line.line-chevron5 > .line > .line {
+  position: absolute;
+  top: -112px;
+  left: -207px;
+  width: 262px;
+  border: 2px solid hsl(180, 100%, 30%);
+  transform: rotate(57deg);
+}
+.center > .stargate-container > .stargate > .line-container > .left-line-container > .line.line-chevron4 {
+  position: absolute;
+  top: 246px;
+  left: -588px;
+  width: 170px;
+  border: 2px solid hsl(180, 100%, 30%);
+}
+.center > .stargate-container > .stargate > .line-container > .left-line-container > .line.line-chevron4 > .line {
+  position: absolute;
+  top: -357px;
+  left: -358px;
+  width: 710px;
+  border: 2px solid hsl(180, 100%, 30%);
+  transform: rotate(90deg);
+}
+.center > .stargate-container > .stargate > .line-container > .left-line-container > .line.line-chevron4 > .line > .line {
+  position: absolute;
+  top: -96px;
+  left: -177px;
+  width: 224px;
+  border: 2px solid hsl(180, 100%, 30%);
+  transform: rotate(56deg);
 }
 .center > .status-container {
   width: 100%;
@@ -824,7 +1060,9 @@ Utils
 }
 .generated-line {
   position: absolute;
-  border: 2px solid hsl(180, 100%, 30%);
+  height: 2px;
+  border: 1px solid hsl(180, 100%, 30%);
+  background-color: hsl(180, 100%, 30%);
   border-radius: 10px;
   transform-origin: 0 0;
 }
@@ -872,5 +1110,10 @@ Utils
 }
 .flashing-box > div.color2.dark {
   background-color: rgba(255, 234, 167, 0.5);
+}
+.line.active,
+.generated-line.active {
+  border-color: red !Important;
+  background-color: red !Important;
 }
 /*# sourceMappingURL=styles.css.map */
