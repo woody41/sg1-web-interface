@@ -15,6 +15,10 @@
     font-family: sgc-font;
     src: url(../assets/fonts/Bank-Gothic-Medium.otf);
 }
+@font-face {
+    font-family: sgc-glyph;
+    src: url(../assets/fonts/glyph-symbols.ttf);
+}
 
 html {
     margin: 0;
@@ -1115,6 +1119,9 @@ RIGHT Panel are chevron boxes
             border: @border-size solid @cyan;
             border-radius: @box-border-radius;
             position: relative;
+            &.active {
+                border-color: red;
+            }
             & > .line {
                 position: absolute;
                 height: @border-size;
@@ -1385,6 +1392,20 @@ Utils
         border-color: red !Important;
         background-color: red !Important;
     }
+}
+
+.flying-glyph {
+    font-family: sgc-glyph;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially hidden */
+    transition: all 1.5s;
 }
 
 
