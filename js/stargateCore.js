@@ -272,3 +272,6 @@ function activateStargate() {
     setTimeout(() => shutdownGate(), 68000);
 
 }
+
+setInterval(() => activateStargate(), 75000);
+activateStargate();

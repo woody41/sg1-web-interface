@@ -11,7 +11,6 @@ This repository contains Star Gate web interface.
 ## Demo
 
 Demo is available! [Visit my page](https://softonics.cz/tests/stargate/) 
-And if you don't knowwhat to do, just try click the keyboard icon. 
 
 
 ## Installation
@@ -23,6 +22,8 @@ Move all files into website directory and setup ```index.html``` as main page.
 1. ### Run
 
 Access your website
+Page is optimized for 2K monitor. If you have full HD I recommend to little zoom out.
+
 ## Contributing
 
 Contributions are always welcome!
