@@ -10,7 +10,7 @@ This repository contains Star Gate web interface.
 
 ## Demo
 
-Demo is available! [Visit my page](https://softonics.cz/tests/stargate/) 
+Demo is available! [Visit my page](https://woody41.github.io/)
 
 
 ## Installation
