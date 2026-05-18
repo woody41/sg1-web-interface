@@ -74,6 +74,7 @@ LEFT Panel styles. Left panel are binary boxes and flashing boxes under logo (in
 .left-panel > .binary-check-container > .binary-check > .binary-container > .binary-box {
   float: left;
   width: 88.2%;
+  height: 100%;
 }
 .left-panel > .binary-check-container > .binary-check > .binary-container > .binary-box > .binary-text {
   width: calc(100% - calc(calc(2px + 2px + 3px) * 2) - 19px);
